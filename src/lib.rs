@@ -9,14 +9,9 @@ pub mod map;
 pub mod system;
 
 pub mod prelude {
-    pub use crate::{
-        dolly::driver::*,
-        dolly::prelude::*,
-        dolly_type::*,
-        drivers::{follow::*, fpv::*},
-        helpers::*,
-        helpers::{cone::*, cursor_grab::*, pos_ctrl::*},
-        map::*,
-        system::*,
-    };
+    #[cfg(feature = "drivers")]
+    pub use crate::drivers::{follow::*, fpv::*};
+    #[cfg(feature = "helpers")]
+    pub use crate::helpers::{cone::*, cursor_grab::*, pos_ctrl::*, *};
+    pub use crate::{dolly::driver::*, dolly::prelude::*, dolly_type::*, map::*, system::*};
 }

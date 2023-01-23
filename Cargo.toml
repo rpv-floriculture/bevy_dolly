@@ -33,19 +33,22 @@ dolly = "0.4"
 leafwing-input-manager = { version = "0.7", optional = true }
 
 [dependencies.bevy]
-version = "0.9"
-features = ["render", "bevy_asset"]
+git = "https://github.com/rpv-floriculture/bevy"
+# path = "../bevy"
+features = ["bevy_asset"]
 default-features = false
 
 [dev-dependencies]
 leafwing-input-manager = "0.7"
 
 [dev-dependencies.bevy]
-version = "0.9"
+git = "https://github.com/rpv-floriculture/bevy"
+# path = "../bevy"
 features = ["bevy_asset", "bevy_scene", "bevy_winit", "bevy_gltf", "png"]
 default-features = false
 
 [target.'cfg(target_os = "linux")'.dev-dependencies.bevy]
-version = "0.9"
+git = "https://github.com/rpv-floriculture/bevy"
+# path = "../bevy"
 features = ["x11", "wayland"]
 default-features = false
